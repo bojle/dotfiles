@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+dir="/usr/share/chicken/doc/manual/"
+file="$dir$(ls -x $dir | grep -i "$1" | head -1)"
+printf "%s\n" "$file"
+printf "Searched for: \"%s\"\n" "$1"
+librewolf "$file"	
