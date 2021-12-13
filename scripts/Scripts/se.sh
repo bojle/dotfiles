@@ -34,6 +34,10 @@ wh() {
 	url="https://www.wordhippo.com/what-is/another-word-for/$(spaceto _ "$@").html"
 }
 
+wha() {
+	url="https://www.wordhippo.com/what-is/the-opposite-of/$(spaceto _ "$@").html"
+}
+
 ur() {
 	url="https://www.urbandictionary.com/define.php?term=$(spaceto + "$@")"
 }

@@ -458,3 +458,11 @@ h5,
 h6 {
   margin-bottom: 0.8rem;
 }
+
+.break-before {
+	break-before: page;
+}
+
+.smallcaps {
+  font-variant-caps: small-caps;
+}

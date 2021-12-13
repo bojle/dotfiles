@@ -40,3 +40,7 @@ pprepare() {
 	convert temp.png -negate ""$1"-bw.png"
 	rm temp.png
 }
+
+play() {
+	mpv "$(find ~/musick/ | grep -iE "$*")"
+}

@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/metal/.dotfiles/polybar/.config/polybar/scripts'
+let g:netrw_dirhist_5='/usr/local/searx/searx-src/searx/static/themes/oscar/css'
+let g:netrw_dirhist_4='/home/metal/dev/misc'
+let g:netrw_dirhist_3='/home/metal/Notes/clg'
+let g:netrw_dirhist_2='/home/metal/dev/edd'
 let g:netrw_dirhist_1='/home/metal/Scripts'

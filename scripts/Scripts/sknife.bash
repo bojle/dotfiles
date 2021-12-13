@@ -53,6 +53,7 @@ pdfcompress() {
 
 ### Image ###
 alias jpgtopdf='pngtopdf'
+alias jpegtopdf='pngtopdf'
 alias jpgtodoc='pngtodoc'
 alias jpgcompress='pngcompress'
 pngtopdf() {

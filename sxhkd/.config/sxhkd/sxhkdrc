@@ -153,3 +153,6 @@ XF86MonBrightness{Up,Down}
 
 F12
 	mpv $HOME/.local/share/21st-century-fart.m4a
+
+F11
+	mpv $HOME/.local/share/Vine-thud.m4a
