@@ -1,0 +1,6 @@
+[Unit]
+Description=Alert when battery is above or below a threshold.
+
+[Service]
+Type=simple
+ExecStart=/home/metal/Scripts/battery-alert.sh

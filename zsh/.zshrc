@@ -1,6 +1,6 @@
 # Created by newuser for 5.8
 
-PROMPT='%B%F{214}%4~%f %(?.%F{15}λ%f.%F{196}λ%f)%b '
+PROMPT='%B%F{214}%4~%f %(?.%F{15}オ%f.%F{196}オ%f)%b '
 # History Configuration 
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=5000
@@ -28,3 +28,5 @@ source ~/.zsh/zsh.functions
 set -o vi
 bindkey -M viins "^E" end-of-line
 bindkey -M viins "^A" beginning-of-line
+bindkey -M viins "^P" up-history
+bindkey -M viins "^N" down-history

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-seconds=1200
+seconds=5
 # Make a comma separated string where field 3 => pid and field 4 => cmdname
 cmdstring=$( ps -ax -o pid,cmd | grep "sleep $seconds" | head -n 1 | sed 's/  \| /,/g')
 

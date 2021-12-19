@@ -1,0 +1,9 @@
+[Unit]
+Description=Alert when battery is above or below a threshold.
+
+[Timer]
+OnActiveSec=0m
+OnUnitActiveSec=15m
+
+[Install]
+WantedBy=multi-user.target

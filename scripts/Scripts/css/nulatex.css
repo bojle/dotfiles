@@ -32,7 +32,7 @@ html {
 
 
 body {
-  font-family: 'CMU Serif', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-family: 'JetBrains Mono', 'CMU Concrete', 'CMU Serif', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
   max-width: 95ch;
