@@ -7,18 +7,15 @@ makehtml() {
 di() { 
 	dict "$@" | less 
 }
-cly() { 
-	clyrics "$@" | less 
-}
 moby() { 
 	$HOME/Scripts/moby.sh "$@" | less 
 }
-synct() { 
-	killall syncthing 2>/dev/null
-	syncthing -no-browser 1>/dev/null 2>/dev/null & 
-	echo "waiting for GUI..."; sleep 5
-	"$BROWSER" 127.0.0.1:8384 1>/dev/null 2>/dev/null &
-}
+#synct() { 
+#	killall syncthing 2>/dev/null
+#	syncthing -no-browser 1>/dev/null 2>/dev/null & 
+#	echo "waiting for GUI..."; sleep 5
+#	"$BROWSER" 127.0.0.1:8384 1>/dev/null 2>/dev/null &
+#}
 wadd() {
 	echo "$(date '+%d/%m/%y')-$1" >> $HOME/Notes/fit/weightrecord.txt
 }
@@ -43,4 +40,10 @@ pprepare() {
 
 play() {
 	mpv "$(find ~/musick/ | grep -iE "$*")"
+}
+
+fnd() {
+	local dir="$1"
+	shift 1
+	find "$dir" | grep -E "$@"
 }

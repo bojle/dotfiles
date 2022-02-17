@@ -15,7 +15,7 @@ super + Escape
 
 #launch brave
 super + shift + {x,l,p,b,s,r} 
-	{librewolf, alacritty -e ranger,pavucontrol,$HOME/Scripts/blue.sh,scrot -u,$HOME/.local/bin/rdr}
+	{$BROWSER,alacritty -e ranger,pavucontrol,$HOME/Scripts/blue.sh,scrot -u,$HOME/.local/bin/rdr}
 
 # Open tor 
 super + shift + t
