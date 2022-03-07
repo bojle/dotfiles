@@ -151,8 +151,5 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 XF86MonBrightness{Up,Down}
 	brightnessctl set {4%-,+4%}
 
-F12
-	mpv $HOME/.local/share/21st-century-fart.m4a
-
 F11
 	mpv $HOME/.local/share/Vine-thud.m4a

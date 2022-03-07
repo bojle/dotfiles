@@ -7,6 +7,7 @@
 
 battery_percent="$(cat /sys/class/power_supply/BAT1/capacity)"
 curr_status="$(cat /sys/class/power_supply/BAT1/status)"
+
 # beep_file_location="$HOME/.local/share/beep-06.mp3"
 
 function play_beep() {

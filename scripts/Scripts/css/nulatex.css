@@ -26,13 +26,13 @@ dd {
 
 /* Make default font-size 1rem and add smooth scrolling to anchors */
 html {
-  font-size: 1rem;
+  font-size: 1.5rem;
   scroll-behavior: smooth;
 }
 
 
 body {
-  font-family: 'JetBrains Mono', 'CMU Concrete', 'CMU Serif', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-family: 'CMU Serif', 'CMU Concrete', 'JetBrains Mono', 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
   max-width: 95ch;
