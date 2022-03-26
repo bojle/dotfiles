@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# syntax: sknife convert -o hello.jpg
-# convert: -t -f -o 
-# compress 
-
-
 inputfiles=()
 outputfiles=""
 firstpage=""
@@ -12,15 +7,24 @@ lastpage=""
 
 usage() {
 	cat << END
-Usage: sknife [procedure] [infile] [firstpage] [lastpage] [-o outfile]
-sknife convert a.png b.jpg c.png -o out.pdf f.png
-sknife compress a.pdf -o out.pdf
-sknife split a.pdf 1 2 -o out.pdf
-sknife merge e.pdf a.pdf -o merged.pdf  b.pdf
+Usage: 
+	sknife [procedure] [infile] [firstpage] [lastpage] [-o outfile]
+
+Examples:
+	sknife convert a.png b.jpg c.png -o out.pdf f.png
+	sknife compress a.pdf -o out.pdf
+	sknife split a.pdf 1 2 -o out.pdf
+	sknife merge e.pdf a.pdf -o merged.pdf  b.pdf
 END
 }
 
-### PDF ### 
+alias pdftojpg='pdftopng'
+alias jpgtopdf='pngtopdf'
+alias jpegtopdf='pngtopdf'
+alias jpgtodoc='pngtodoc'
+alias jpgcompress='pngcompress'
+alias m4bmerge='mp3merge'
+alias avimerge='mp3merge'
 
 pdftotxt() {
 	gs -sDEVICE=txtwrite -sOutputFile="$outputfiles" -q -dNOPAUSE -dBATCH "${inputfiles[@]}"
@@ -31,7 +35,6 @@ pdftopng() {
 	local exe="$(basename "$outputfiles" | cut -d . -f 2)"	
 	gs -dNOPAUSE -dBATCH -q -sDEVICE=pngalpha -o "$basenem"-%03d."$exe" -r144 "${inputfiles[@]}"
 }
-alias pdftojpg='pdftopng'
 
 pdftops() {
 	pdf2ps "${inputfiles[@]}" "$outputfiles"
@@ -49,13 +52,7 @@ pdfcompress() {
 	gs -sDEVICE=pdfwrite -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH \
 		-sOutputFile="$outputfiles" "${inputfiles[@]}"
 }
-###
 
-### Image ###
-alias jpgtopdf='pngtopdf'
-alias jpegtopdf='pngtopdf'
-alias jpgtodoc='pngtodoc'
-alias jpgcompress='pngcompress'
 pngtopdf() {
 	img2pdf "${inputfiles[@]}" -o "$outputfiles"
 }
@@ -73,10 +70,6 @@ pngcompress() {
 		-quality 45% -colorspace RGB  "$outputfiles"
 }
 
-###
-
-### Audio/Video
-
 mp3merge() {
 	tmp="concat.txt"
 	rm "$tmp" 2>/dev/null
@@ -87,16 +80,18 @@ mp3merge() {
 	ffmpeg -f concat -safe 0 -i "$tmp" -c copy "$outputfiles"
 	rm "$tmp"
 }
-alias m4bmerge='mp3merge'
-alias avimerge='mp3merge'
 
-###
+mp3split() {
+	local to="$(( lastpage - firstpage ))"
+	ffmpeg -ss "$firstpage" -i "${inputfiles[0]}" -t "$to" -c copy "$outputfiles"
+}
 
 
 filextension() {
 	basename "$1" | cut -d "." -f 2
 }
 
+# Parse Arguments, Decide which function to call
 main() {
 	if [[ "$1" == "-h" ]]; then
 		usage
@@ -132,11 +127,6 @@ main() {
 			eval "$infiletype""$procedure"
 			;;
 	esac
-
-	#echo ${inputfiles[@]}
-	#echo $outputfiles
-	#echo $firstpage
-	#echo $lastpage
 }
 
 main "$@"
