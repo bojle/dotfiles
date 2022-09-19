@@ -3,8 +3,9 @@
 #
 
 # terminal emulator
-super + Return
-	alacritty
+#super + Return
+#	alacritty
+
 # program launcher
 super + d  
 	$HOME/.config/polybar/scripts/menu 	
@@ -14,8 +15,8 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #launch brave
-super + shift + {x,l,p,b,s,r} 
-	{$BROWSER,alacritty -e ranger,pavucontrol,$HOME/Scripts/blue.sh,scrot -u,$HOME/.local/bin/rdr}
+super + shift + {x,l,p,b,s,r,n} 
+	{$BROWSER,alacritty -e ranger,pavucontrol,$HOME/Scripts/blue.sh,scrot -u,$HOME/.local/bin/rdr,alacritty -e $HOME/Scripts/load_wifi.sh}
 
 # Open tor 
 super + shift + t
@@ -29,10 +30,18 @@ super + shift + h
 super + shift + i
 	$HOME/Scripts/email-prompt.sh
 
+super + shift + m
+	$HOME/Scripts/select_mail.sh
+
+super + shift + y
+	$HOME/warez/Discord/Discord
+
 #open shutdown menu 
 super + q 
 	$HOME/.config/polybar/scripts/sysmenu 
 
+super + space
+	alacritty
 #
 # bspwm hotkeys
 #
@@ -150,6 +159,9 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 # Brightness
 XF86MonBrightness{Up,Down}
 	brightnessctl set {4%-,+4%}
+
+alt + XF86MonBrigness{Up,Down}
+	brightnessctl set {0%, 0%}
 
 F11
 	mpv $HOME/.local/share/Vine-thud.m4a

@@ -30,3 +30,6 @@ bindkey -M viins "^E" end-of-line
 bindkey -M viins "^A" beginning-of-line
 bindkey -M viins "^P" up-history
 bindkey -M viins "^N" down-history
+
+# asdf
+. $HOME/.asdf/asdf.sh
