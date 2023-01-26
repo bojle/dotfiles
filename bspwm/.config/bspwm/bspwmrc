@@ -39,7 +39,7 @@ bspc config gapless_monocle      true
 
 
 #wallpaper
-feh --bg-fill /home/metal/Pictures/Wallpapers/117.jpg
+feh --bg-fill /home/metal/Pictures/Wallpapers/122.png
 
 #Compositor  
 picom &   

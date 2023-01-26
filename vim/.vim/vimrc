@@ -27,6 +27,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'elixir-editors/vim-elixir'
 " Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
 

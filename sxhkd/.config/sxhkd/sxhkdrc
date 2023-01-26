@@ -14,9 +14,35 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#launch brave
-super + shift + {x,l,p,b,s,r,n} 
-	{$BROWSER,alacritty -e ranger,pavucontrol,$HOME/Scripts/blue.sh,scrot -u,$HOME/.local/bin/rdr,alacritty -e $HOME/Scripts/load_wifi.sh}
+# Open Browser
+super + shift + x
+	$BROWSER
+#
+# Open Ranger (File Manager)
+super + shift + l
+	alacritty -e ranger
+#
+# Open Sound Config. Utility
+super + shift + p
+	pavucontrol
+
+# Connect to bluetooth
+super + shift + b
+	$HOME/Scripts/blue.sh
+
+# Take a screenshot, allows cropping before
+# clicking
+super + shift + s
+	scrot --select --freeze --line 'width=3'
+
+# rdr fetches the contents of websites and displays
+# them with a simple css file
+super + shift + r
+	$HOME/Scripts/rdr.sh
+
+# Open Network Manager
+super + shift + n
+	alacritty -e $HOME/Scripts/load_wifi.sh
 
 # Open tor 
 super + shift + t
@@ -29,12 +55,6 @@ super + shift + h
 # Email prompt
 super + shift + i
 	$HOME/Scripts/email-prompt.sh
-
-super + shift + m
-	$HOME/Scripts/select_mail.sh
-
-super + shift + y
-	$HOME/warez/Discord/Discord
 
 #open shutdown menu 
 super + q 

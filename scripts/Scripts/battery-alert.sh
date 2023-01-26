@@ -5,6 +5,9 @@
 # Used by a systemd service which is governed by a systemd
 # timer. This script will be called every `n` minutes. 
 
+# Pauses notfications and sound alerts
+dnd_mode=0
+
 battery_percent="$(cat /sys/class/power_supply/BAT1/capacity)"
 curr_status="$(cat /sys/class/power_supply/BAT1/status)"
 
@@ -16,12 +19,14 @@ function play_beep() {
 	local is_connected=$(bluetoothctl info | grep -i "connected" | cut -d" " -f 2)
 	if ! [ "$is_connected" = "yes" ]; then
 		# Set new volume 
-		amixer set Master 85% 
+		amixer set Master 70% 
 		# Unmute
 		amixer set Master toggle on 
 	fi
 	# Play a 800Hz sine for 0.5 seconds (speaker-test comes with alsa)
-	speaker-test -t sine -f 800 -l 1 & sleep 0.5 && kill -9 $!
+	if [ $dnd_mode == 0 ]; then
+		speaker-test -t sine -f 800 -l 1 & sleep 0.5 && kill -9 $!
+	fi
 	# mpv "$beep_file_location" 
 	if ! [ "$is_connected" = "yes" ]; then
 		# Reset original volume
@@ -36,12 +41,16 @@ if ! xset q &>/dev/null; then
 	exit 1
 fi
 
+notification_string=""
 if [[ "$curr_status" = Discharging ]] && (( battery_percent < 21 )); then
-	notify-send --urgency=critical "Low Battery; Connect Charger"
-	play_beep &>/dev/null
+	notification_string="Low Battery; Connect Charger"
 elif [[ "$curr_status" = Charging ]] && (( battery_percent > 79 )); then
-	notify-send --urgency=critical "Disconnect Charge"
-	play_beep &>/dev/null
+	notification_string="Disconnect Charge"
+fi
+
+if [ $dnd_mode == 0 ]; then
+	notify-send --urgency=critical "$notification_string"
+	#play_beep &>/dev/null
 fi
 
 exit 0

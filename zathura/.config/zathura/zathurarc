@@ -2,8 +2,8 @@ map <A-J> zoom out
 map <A-K> zoom in
 
 # Gruvbox dark
-set recolor-lightcolor "#282828"
-set recolor-darkcolor "#ebdbb2"
+#set recolor-lightcolor "#282828"
+#set recolor-darkcolor "#ebdbb2"
 
 # Solarized light
 # set recolor-lightcolor "#fdf6e3"
@@ -14,8 +14,8 @@ set recolor-darkcolor "#ebdbb2"
 # set recolor-darkcolor "#f8f8f2"
 
 # Gruvbox light
-#set recolor-lightcolor "#fbf1c7"
-#set recolor-darkcolor "#3c3836"
+set recolor-lightcolor "#fbf1c7"
+set recolor-darkcolor "#3c3836"
 #
 
 set font "JetBrains Mono 13"

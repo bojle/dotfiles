@@ -5,3 +5,5 @@ export CSS=$HOME/Scripts/css/nulatex.css
 export BROWSER=brave
 export EDITOR=/usr/bin/vim
 export PICO_SDK_PATH=$HOME/dev/pico/pico-sdk/
+export CDPATH=$HOME/dev/:$HOME/warez/
+export FONTS=/usr/share/fonts/

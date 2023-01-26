@@ -1,6 +1,6 @@
 # Created by newuser for 5.8
 
-PROMPT='%B%F{214}%4~%f %(?.%F{15}Λ%f.%F{196}Λ%f)%b '
+PROMPT='%B%F{214}%4~%f %(?.%F{15}λ%f.%F{196}λ%f)%b '
 # History Configuration 
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=5000
