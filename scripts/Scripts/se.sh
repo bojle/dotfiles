@@ -49,6 +49,9 @@ wb() {
 de() {
 	url="http://search.disroot.org/search?q=$(spaceto + "$@")&categories=general&language=en-US"
 }
+git() {
+	url="https://git-scm.com/docs/git-"$@""
+}
 at="$1"
 url=""
 shift 1

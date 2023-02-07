@@ -74,6 +74,7 @@ nnoremap <Esc>E :!chmod +x % && ./%
 " make <a-P> call mdtopdf on the current file
 nnoremap <Esc>P :!mdtopdf -d %
 
+
 map <leader>* :grep <cword> * --exclude-dir={.git,tmp,log}<CR><CR>
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim/ycm/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0

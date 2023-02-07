@@ -47,3 +47,7 @@ fnd() {
 	shift 1
 	find "$dir" | grep -E "$@"
 }
+
+fz() {
+	vim "$(fzf)"
+}

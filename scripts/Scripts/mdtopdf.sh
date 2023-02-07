@@ -8,7 +8,9 @@ infiles=()
 makepdf(){ 
 	outfile="$1"
 	shift 1
-	pandoc -t html --css ~/Scripts/css/nulatex.css --pdf-engine=wkhtmltopdf --quiet -o "$outfile" "$infiles"
+	# Used wkhtmltopdf when latex was not present on my system. Uses pdflatex now.
+	#pandoc -t html --css ~/Scripts/css/nulatex.css --pdf-engine=wkhtmltopdf --quiet -o "$outfile" "$infiles"
+	pandoc --quiet -o "$outfile" "$infiles"
 	"$pdfviewer" "$outfile"
 }
 

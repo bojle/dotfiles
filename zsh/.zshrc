@@ -20,9 +20,10 @@ setopt HIST_REDUCE_BLANKS
 
 setopt NO_CASE_GLOB
 
-source ~/.zsh/zsh.alias
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-z/zsh-z.plugin.zsh
 source ~/.zsh/zsh.functions
+source ~/.zsh/zsh.alias
 
 ## Vi mode
 set -o vi
