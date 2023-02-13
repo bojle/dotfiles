@@ -1,5 +1,5 @@
-" Get the defaults that most users want.
-" source $VIMRUNTIME/defaults.vim
+" Belongs to github.com/bojle
+" do whatever you want with it
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -10,37 +10,31 @@ else
   endif
 endif
 
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-
+" Load Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'elixir-editors/vim-elixir'
-Plug 'mileszs/ack.vim'
-" Plug 'vlime/vlime', {'rtp': 'vim/'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
+packadd! matchit
+runtime! ftplugin/man.vim
 
+" change colorscheme
 colorscheme gruvbox
 set background=dark
 
+""" turn indentation on
 filetype plugin indent on
+
+""" autocmds
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 autocmd FileType text,markdown,tex setlocal spell spelllang=en_gb
 autocmd FileType text,markdown,tex set textwidth=80
 
+""" set options
 set tabstop=4
 set shiftwidth=4
 set number
@@ -53,58 +47,38 @@ set laststatus=2
 set complete+=kspell
 set showcmd
 set lazyredraw
-
-" Enbales recursive file finding (fuzzy finder)
 set path=**
 set wildmenu
-
-" Auto reload a file when it is changed outside of vim
 set autoread
+set hlsearch
+set splitright
+set splitbelow
 
-runtime! ftplugin/man.vim
 
-" Key Mappings
+" Abbreviations
 cabbrev h vert bo h
 cabbrev tn tabnew
 
+""" maps
 noremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
-" make <a-E> execute a script
-nnoremap <Esc>E :!chmod +x % && ./%
-
-" make <a-P> call mdtopdf on the current file
+nnoremap <Esc>E :!chmod +x % && ./%	
 nnoremap <Esc>P :!mdtopdf -d %
-
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 
-" ack.vim plugs
-let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
-
-" Any empty ack search will search for the work the cursor is on
-let g:ack_use_cword_for_empty_search = 1
-
-" Don't jump to first match
-cnoreabbrev Ack Ack!
-
-" Maps <leader>/ so we're ready to type the search keyword
-nnoremap <Leader>/ :Ack!<Space>
-" }}}
-
-" Navigate quickfix list with ease
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
-
-
 map <leader>* :grep <cword> * --exclude-dir={.git,tmp,log}<CR><CR>
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/ycm/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
 
-" nnoremap <leader>cd vi)y:! cdoc "<c-r>0"<CR>
 command Dgt execute "vert bo help digraph-table"
 
-set splitright
-set splitbelow
+""" Plugin specific options
+
+" ack.vim options
+let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
+" Any empty ack search will search for the work the cursor is on
+let g:ack_use_cword_for_empty_search = 1
+" Don't jump to first match
+cnoreabbrev Ack Ack!
+" Maps <leader>/ so we're ready to type the search keyword
+nnoremap <Leader>/ :Ack!<Space>
 
 let g:ft_man_open_mode = 'vert'
