@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/metal/dev/RPi4-1.34/firmware/brcm'
 let g:netrw_dirhist_1='/home/metal/dev/edk2-axon/edk2-platforms/Platform/Radxa/ROCK5B'
 let g:netrw_dirhist_0='/home/metal/dev/edk2-rk3399-andreiw/edk2/BaseTools/Source/C/Makefiles'
 let g:netrw_dirhist_9='/home/metal/mntpoint'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/home/metal/dev/ey/fb_hardware_testing'
 let g:netrw_dirhist_5='/home/metal/VirtualBox VMs'
 let g:netrw_dirhist_4='/etc'
 let g:netrw_dirhist_3='/home/metal/dev/fl/os161new/os161-1.11-main/kern/main'
-let g:netrw_dirhist_2='/home/metal/dev/fl/os161/os161/kern/syscall'

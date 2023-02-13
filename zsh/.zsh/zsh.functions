@@ -45,7 +45,7 @@ play() {
 fnd() {
 	local dir="$1"
 	shift 1
-	find "$dir" | grep -E "$@"
+	find "$dir" | grep -Ei "$@"
 }
 
 fz() {
