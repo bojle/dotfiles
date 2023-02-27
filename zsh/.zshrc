@@ -33,4 +33,4 @@ bindkey -M viins "^P" up-history
 bindkey -M viins "^N" down-history
 
 # asdf
-. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/asdf.sh

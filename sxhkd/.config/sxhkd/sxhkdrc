@@ -182,6 +182,3 @@ XF86MonBrightness{Up,Down}
 
 alt + XF86MonBrigness{Up,Down}
 	brightnessctl set {0%, 0%}
-
-F11
-	mpv $HOME/.local/share/Vine-thud.m4a
