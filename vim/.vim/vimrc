@@ -13,10 +13,10 @@ endif
 " Load Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
-Plug 'elixir-editors/vim-elixir'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 packadd! matchit
 runtime! ftplugin/man.vim
@@ -40,7 +40,6 @@ set shiftwidth=4
 set number
 set relativenumber 
 set cursorline
-set ignorecase
 set smartcase
 set nocompatible
 set laststatus=2
@@ -53,6 +52,7 @@ set autoread
 set hlsearch
 set splitright
 set splitbelow
+set esckeys
 
 
 " Abbreviations
@@ -72,13 +72,9 @@ command Dgt execute "vert bo help digraph-table"
 
 """ Plugin specific options
 
-" ack.vim options
-let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
-" Any empty ack search will search for the work the cursor is on
-let g:ack_use_cword_for_empty_search = 1
-" Don't jump to first match
-cnoreabbrev Ack Ack!
-" Maps <leader>/ so we're ready to type the search keyword
-nnoremap <Leader>/ :Ack!<Space>
+nnoremap <leader>d :Rg<CR>
+nnoremap <leader>f :Files<CR>
 
 let g:ft_man_open_mode = 'vert'
+
+map <space> <leader>

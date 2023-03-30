@@ -11,7 +11,7 @@ makepdf(){
 	# Used wkhtmltopdf when latex was not present on my system. Uses pdflatex now.
 	#pandoc -t html --css ~/Scripts/css/nulatex.css --pdf-engine=wkhtmltopdf --quiet -o "$outfile" "$infiles"
 	pandoc -o "$outfile" "$infiles"
-	"$pdfviewer" "$outfile"
+	#"$pdfviewer" "$outfile"
 }
 
 

@@ -37,6 +37,6 @@ fi
 systemctl --user enable battery-alert.timer
 systemctl --user start battery-alert.timer
 xsetroot -Adwaita left_ptr
-xset r rate 260 70
+xset r rate 180 140
 sxhkd &
 exec bspwm

@@ -7,4 +7,6 @@ export EDITOR=/usr/bin/vim
 export PICO_SDK_PATH=$HOME/dev/pico/pico-sdk/
 export CDPATH=$HOME/dev/:$HOME/warez/
 export FONTS=/usr/share/fonts/
-export axon=$HOME/dev/edk2-axon
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/metal/dev/openasip/openasip/local
+export PATH=$PATH:$HOME/dev/openasip/openasip/local/bin/
+export LDFLAGS=-L$HOME/dev/openasip/openasip/local/lib/

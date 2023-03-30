@@ -50,7 +50,8 @@ super + shift + t
 
 # Take a break
 super + shift + h
-	$HOME/Scripts/timer.sh
+	xset r rate 210 140
+
 
 # Email prompt
 super + shift + i

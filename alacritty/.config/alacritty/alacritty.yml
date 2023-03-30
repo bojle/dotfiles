@@ -102,7 +102,7 @@ window:
 # Font configuration
 font:
   normal:
-    family: JetBrains Mono
+    family: Iosevka Term
     style: Regular
 
     #bold:

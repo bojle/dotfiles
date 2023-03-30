@@ -25,6 +25,6 @@ fi
 
 if [ ! -f "${file}" ]; then
 	rdrview -H "$url" > "$file"
-	sed -i '1i <link rel="stylesheet" href="/home/metal/Scripts/css/nulatex.css">' "$file"
+	sed -i '1i <link rel="stylesheet" href="/home/metal/Scripts/css/simple.css">' "$file"
 fi
 urlopen "${file}"
