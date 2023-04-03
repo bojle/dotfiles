@@ -29,4 +29,6 @@
 		websurf.bash hn
 	will open a random hn page.
 
-
+[**se.sh**](./se.sh)
+   Search across a search engine from your command line. See the source for
+   more info.
