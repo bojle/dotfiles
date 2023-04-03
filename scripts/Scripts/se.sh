@@ -1,4 +1,17 @@
 #!/usr/bin/sh
+#
+# By github.com/bojle
+#
+# Script to search across various search engines
+# Usage:
+# 	se yt crystal castles crimewave
+# 	se wh clutter
+# 	se ur charizarding
+# What each keyword means can be infered from looking
+# at the function that implements it.
+#
+# To add a new keyword, simply add a function with the global
+# 'url' variable appropriately set.
 
 # Convert spaces to whatever is $1
 spaceto() {
@@ -45,6 +58,10 @@ de() {
 
 git() {
 	url="https://git-scm.com/docs/git-"$@""
+}
+
+cnf() {
+	url="https://command-not-found.com/"$@""
 }
 
 at="$1"
