@@ -1,5 +1,4 @@
 export PATH=$PATH:$HOME/.local/bin/:/home/metal/warez/gcc-arm-11.2-2022.02-x86_64-aarch64-none-linux-gnu/bin/
-export GUILE_AUTO_COMPILE=0
 export CPATH=/usr/include/guile/2.2/
 export CSS=$HOME/Scripts/css/nulatex.css
 export BROWSER=brave
