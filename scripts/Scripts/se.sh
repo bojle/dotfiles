@@ -11,13 +11,6 @@ yt() {
 	url="https://youtube.com/results?search_query=$(spaceto + "$@")"
 }
 
-# 4chan archive 
-fa() {
-	board="$1"
-	shift 1
-	url="https://duckduckgo.com/?q=$(spaceto + "$@")+site:4chanarchives.com/board/$board&t=h_&ia=web"
-}
-
 gi() {
 	url="https://duckduckgo.com/?q=$(spaceto + "$@")&iax=images&ia=images"
 }
@@ -49,9 +42,11 @@ wb() {
 de() {
 	url="http://search.disroot.org/search?q=$(spaceto + "$@")&categories=general&language=en-US"
 }
+
 git() {
 	url="https://git-scm.com/docs/git-"$@""
 }
+
 at="$1"
 url=""
 shift 1
