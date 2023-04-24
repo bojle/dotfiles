@@ -7,9 +7,9 @@ todo_file="todo.md"
 current_dir="$(pwd)"
 
 function check_connection() {
-	ret="$(curl -Is 'https://www.google.com' | head -n 1)"
 	echo "Checking Connection..."
-	if [[ "$ret" == "HTTP/2 200" ]]; then
+	ret="$(curl -Is 'https://www.google.com' | head -n 1)"
+	if [ -z "$ret" ]; then
 		echo "Error: Couldn't Connect to github.com"
 		exit 1
 	fi
