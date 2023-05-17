@@ -10,7 +10,7 @@ function check_connection() {
 	echo "Checking Connection"
 	ret="$(curl -Is 'https://www.google.com' | head -n 1)"
 	if [ -z "$ret" ]; then
-		echo "Error: Couldn't Connect to github.com"
+		echo "Error: No Network Connection"
 		exit 1
 	fi
 }
