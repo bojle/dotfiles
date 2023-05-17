@@ -51,6 +51,7 @@ fi
 if [ $dnd_mode == 0 ]; then
 	notify-send --urgency=critical "$notification_string"
 	#play_beep &>/dev/null
+	echo "$(date), Bat:$battery_percent, Brightness: $(brightnessctl -m | cut -d , -f 4)" >> ~/battery.log
 fi
 
 exit 0

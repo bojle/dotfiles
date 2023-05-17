@@ -2,7 +2,8 @@
 
 POWER=$(bluetoothctl show | grep -i "powered" | cut -d" " -f 2)
 DISCOV=$(bluetoothctl show | grep -i "discoverable:" | cut -d" " -f 2)
-MAC="90:7A:58:2d:51:76" # wi c200
+#MAC="90:7A:58:2d:51:76" # wi c200 (retired)
+MAC="48:D8:45:DC:9C:86" # Nord Buds 2
 
 switch_on()
 {
