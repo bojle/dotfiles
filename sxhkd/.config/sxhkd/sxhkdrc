@@ -50,7 +50,7 @@ super + shift + t
 
 # Take a break
 super + shift + h
-	xset r rate 210 140
+	xset r rate 210 120
 
 
 # Email prompt
