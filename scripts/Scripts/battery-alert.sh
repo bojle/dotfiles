@@ -44,14 +44,19 @@ fi
 notification_string=""
 if [[ "$curr_status" = Discharging ]] && (( battery_percent < 21 )); then
 	notification_string="Low Battery; Connect Charger"
+	if [ $dnd_mode == 0 ]; then
+		notify-send --urgency=critical "$notification_string"
+		#play_beep &>/dev/null
+		#echo "$(date), Bat:$battery_percent, Brightness: $(brightnessctl -m | cut -d , -f 4)" >> ~/battery.log
+	fi
 elif [[ "$curr_status" = Charging ]] && (( battery_percent > 79 )); then
 	notification_string="Disconnect Charge"
+	if [ $dnd_mode == 0 ]; then
+		notify-send "$notification_string"
+		#play_beep &>/dev/null
+		#echo "$(date), Bat:$battery_percent, Brightness: $(brightnessctl -m | cut -d , -f 4)" >> ~/battery.log
+	fi
 fi
 
-if [ $dnd_mode == 0 ]; then
-	notify-send --urgency=critical "$notification_string"
-	#play_beep &>/dev/null
-	echo "$(date), Bat:$battery_percent, Brightness: $(brightnessctl -m | cut -d , -f 4)" >> ~/battery.log
-fi
 
 exit 0
