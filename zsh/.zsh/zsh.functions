@@ -1,45 +1,5 @@
-makemake() { 
-	cp $HOME/Scripts/makefile makefile 
-}
-makehtml() { 
-	cp $HOME/Scripts/index.html index.html 
-}
 di() { 
 	dict "$@" | less 
-}
-moby() { 
-	$HOME/Scripts/moby.sh "$@" | less 
-}
-#synct() { 
-#	killall syncthing 2>/dev/null
-#	syncthing -no-browser 1>/dev/null 2>/dev/null & 
-#	echo "waiting for GUI..."; sleep 5
-#	"$BROWSER" 127.0.0.1:8384 1>/dev/null 2>/dev/null &
-#}
-wadd() {
-	echo "$(date '+%d/%m/%y')-$1" >> $HOME/Notes/fit/weightrecord.txt
-}
-
-pullupadd() {
-	echo "$(date '+%d/%m/%y')-$1" >> $HOME/Notes/fit/pullupsrecord.txt
-}
-
-pushupsadd() {
-	echo "$(date '+%d/%m/%y')-$1" >> $HOME/Notes/fit/pushupsrecord.txt
-}
-
-tokg() {
-	bc <<< "scale=4;$1 * 0.4536"
-}
-
-pprepare() {
-	convert "$1" -threshold 60% temp.png
-	convert temp.png -negate ""$1"-bw.png"
-	rm temp.png
-}
-
-play() {
-	mpv "$(find ~/musick/ | grep -iE "$*")"
 }
 
 fnd() {
@@ -48,7 +8,13 @@ fnd() {
 	find "$dir" | grep -Ei "$@"
 }
 
-fz() {
-	vim "$(fzf)"
+pv() {
+	mime="$(file --mime-type -b "$1")"
+	if [[ $mime =~ application/.* ]]; then
+		zathura "$1"
+	elif [[ $mime =~ image/.* ]]; then
+		sxiv "$1"
+	else
+		echo "Unrecognized file"
+	fi
 }
-

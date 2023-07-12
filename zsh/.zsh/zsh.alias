@@ -11,10 +11,12 @@ alias sudo='sudo '
 alias qemu='qemu-system-x86_64'
 alias mtag='mid3v2 '
 
-alias sv='sxiv'
-alias pv='zathura '
-
 alias grep='rg -S'
 alias rg='rg -S'
 alias find='fd'
 alias ls='ls --color=auto'
+
+alias htop='btop '
+alias jupyter-lab="$HOME/dev/jupyter/bin/jupyter-lab"
+
+alias g='git'
