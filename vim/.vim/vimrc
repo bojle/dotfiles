@@ -78,3 +78,5 @@ nnoremap <leader>f :Files<CR>
 let g:ft_man_open_mode = 'vert'
 
 map <space> <leader>
+
+autocmd FileType c,cpp setlocal equalprg=clang-format
