@@ -16,7 +16,7 @@ super + Escape
 
 # Open Browser
 super + shift + x
-	$BROWSER
+	$BROWSER --force-device-scale-factor=1.2 %U
 #
 # Open Ranger (File Manager)
 super + shift + l
@@ -50,7 +50,7 @@ super + shift + t
 
 # Take a break
 super + shift + h
-	xset r rate 210 120
+	xset r rate 190 130
 
 
 # Email prompt
@@ -63,6 +63,9 @@ super + q
 
 super + space
 	alacritty
+
+super + shift + q
+	slock
 #
 # bspwm hotkeys
 #
