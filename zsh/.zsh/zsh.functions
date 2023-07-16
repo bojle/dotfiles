@@ -11,7 +11,9 @@ fnd() {
 pv() {
 	mime="$(file --mime-type -b "$1")"
 	if [[ $mime =~ application/.* ]]; then
-		zathura "$1"
+		zathura "$1" &
+	elif [[ $mime =~ image/.*djvu$ ]]; then
+		zathura "$1" &
 	elif [[ $mime =~ image/.* ]]; then
 		sxiv "$1"
 	else
