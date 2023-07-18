@@ -7,22 +7,9 @@ MAC="48:D8:45:DC:9C:86" # Nord Buds 2
 
 switch_on()
 {
-	if [ "$POWER" = "no" ] && [ "$DISCOV" = "no" ] 
-	then 
-		bluetoothctl power on
-		bluetoothctl discoverable on
-		bluetoothctl connect "$MAC"
-	elif [  "$POWER" = "yes" ] && [ "$DISCOV" = "no" ] 
-	then
-		bluetoothctl discoverable on
-		bluetoothctl connect "$MAC"
-	elif [  "$POWER" = "no" ] && [ "$DISCOV" = "yes" ] 
-	then
-		bluetoothctl power on
-		bluetoothctl connect "$MAC"
-	else
-		bluetoothctl connect "$MAC"
-	fi
+	bluetoothctl power on
+	bluetoothctl discoverable on
+	bluetoothctl connect "$MAC"
 }
 
 switch_off() {
