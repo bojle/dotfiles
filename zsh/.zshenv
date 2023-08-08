@@ -9,3 +9,4 @@ export FONTS=/usr/share/fonts/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/metal/dev/openasip/openasip/local
 export PATH=$PATH:$HOME/dev/openasip/openasip/local/bin/
 export LDFLAGS=-L$HOME/dev/openasip/openasip/local/lib/
+export QT_SCALE_FACTOR=1.5
