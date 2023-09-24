@@ -2,26 +2,22 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
-#super + Return
-#	alacritty
+# Terminal
+super + space
+	alacritty
 
 # program launcher
 super + d  
 	$HOME/.config/polybar/scripts/menu 	
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
 # Open Browser
 super + shift + x
 	$BROWSER --force-device-scale-factor=1.2 %U
-#
+
 # Open Ranger (File Manager)
 super + shift + l
 	alacritty -e ranger
-#
+
 # Open Sound Config. Utility
 super + shift + p
 	pavucontrol
@@ -30,8 +26,7 @@ super + shift + p
 super + shift + b
 	$HOME/Scripts/blue.sh
 
-# Take a screenshot, allows cropping before
-# clicking
+# Take a screenshot, allows cropping before clicking
 super + shift + s
 	scrot --select --freeze --line 'width=3'
 
@@ -48,10 +43,9 @@ super + shift + n
 super + shift + t
 	$HOME/Scripts/tor-launch.sh
 
-# Take a break
+# Reset rate
 super + shift + h
-	xset r rate 190 130
-
+	xset r rate 200 120
 
 # Email prompt
 super + shift + i
@@ -61,11 +55,10 @@ super + shift + i
 super + q 
 	$HOME/.config/polybar/scripts/sysmenu 
 
-super + space
-	alacritty
-
+# Lock the Screen
 super + shift + q
 	slock
+
 #
 # bspwm hotkeys
 #
@@ -118,10 +111,6 @@ super + {p,b,comma,period}
 super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
@@ -132,9 +121,7 @@ super + n
 
 # focus the older or newer node in the focus history
 super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+	bspc desktop -f {next,prev}.local
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -176,6 +163,10 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# 
+# Misc
+#
+
 # pulseaudio 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     amixer set Master {toggle,5%-,5%+}
@@ -183,6 +174,3 @@ XF86Audio{Mute,LowerVolume,RaiseVolume}
 # Brightness
 XF86MonBrightness{Up,Down}
 	brightnessctl set {4%-,+4%}
-
-alt + XF86MonBrigness{Up,Down}
-	brightnessctl set {0%, 0%}

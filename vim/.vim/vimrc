@@ -17,7 +17,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'justinmk/vim-sneak'
+"Plug 'elixir-editors/vim-elixir'
+Plug 'petRUShka/vim-opencl'
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()
+
+""" Vim Native Plugins
 packadd! matchit
 runtime! ftplugin/man.vim
 
@@ -31,16 +36,22 @@ filetype plugin indent on
 """ autocmds
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-autocmd FileType text,markdown,tex setlocal spell spelllang=en_gb
-autocmd FileType text,markdown,tex set textwidth=80
+autocmd FileType *.hs setlocal tabstop=4 shiftwidth=4 expandtab=4
+autocmd FileType text,markdown,tex,rst setlocal spell spelllang=en_gb
+autocmd FileType text,markdown,tex,rst set textwidth=80
+autocmd FileType c,cpp setlocal equalprg=clang-format
+autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit set colorcolumn=73
 
 """ set options
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set number
 set relativenumber 
 set cursorline
 set smartcase
+set ignorecase
 set nocompatible
 set laststatus=2
 set complete+=kspell
@@ -54,6 +65,7 @@ set splitright
 set splitbelow
 set esckeys
 
+set makeprg=make\ -j\ 6
 
 " Abbreviations
 cabbrev h vert bo h
@@ -65,18 +77,24 @@ nnoremap <Esc>E :!chmod +x % && ./%
 nnoremap <Esc>P :!mdtopdf -d %
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
+map <space> <leader>
 
-map <leader>* :grep <cword> * --exclude-dir={.git,tmp,log}<CR><CR>
-
+""" Commands
 command Dgt execute "vert bo help digraph-table"
+command Vt execute "vertical terminal"
 
-""" Plugin specific options
-
+""" Source Code Navigation
 nnoremap <leader>d :Rg<CR>
 nnoremap <leader>f :Files<CR>
 
 let g:ft_man_open_mode = 'vert'
 
-map <space> <leader>
+""" haskell
 
-autocmd FileType c,cpp setlocal equalprg=clang-format
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
