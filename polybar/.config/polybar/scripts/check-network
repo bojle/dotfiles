@@ -3,16 +3,18 @@
 count=0
 disconnected="睊"
 wireless_connected="直"
-ethernet_connected="泌"
+ethernet_connected="󰈀"
 
-ID="$(ip link | awk '/state UP/ {print $2}')"
-
+# check where packets are being routed through
+# depending on interface state being UP/DOWN is not reliable
+# as both interface can be up at the same time
+output="$(ip route get 8.8.8.8)"
 while true; do
-    if (ping -c 1 archlinux.org || ping -c 1 gnu.org || ping -c 1 bitbucket.org || ping -c 1 github.com || ping -c 1 sourceforge.net) &>/dev/null; then
-        if [[ $ID == e* ]]; then
-            echo "$ethernet_connected" ; sleep 25
-        else
-            echo "$wireless_connected" ; sleep 25
+    if (ping -c 1 google.com) &>/dev/null; then
+        if [[ "$output" =~ enp ]]; then
+            echo "$ethernet_connected" ; sleep 2
+        elif [[ "$output" =~ wlp ]]; then
+            echo "$wireless_connected" ; sleep 2
         fi
     else
         echo "$disconnected" ; sleep 0.5
