@@ -20,6 +20,7 @@ Plug 'justinmk/vim-sneak'
 "Plug 'elixir-editors/vim-elixir'
 Plug 'petRUShka/vim-opencl'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'vhda/verilog_systemverilog.vim'
 call plug#end()
 
 """ Vim Native Plugins
@@ -73,8 +74,8 @@ cabbrev tn tabnew
 
 """ maps
 noremap <leader><space> :nohlsearch<CR>
-nnoremap <Esc>E :!chmod +x % && ./%	
-nnoremap <Esc>P :!mdtopdf -d %
+nnoremap <Esc>E :!chmod +x % && ./%<CR>
+nnoremap <Esc>P :!mdtopdf -d %<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 map <space> <leader>
@@ -86,6 +87,11 @@ command Vt execute "vertical terminal"
 """ Source Code Navigation
 nnoremap <leader>d :Rg<CR>
 nnoremap <leader>f :Files<CR>
+
+"inoremap <A-I> <Esc>:m .+1<CR>==gi
+"inoremap <A-O>  <Esc>:m .-2<CR>==gi
+"nnoremap <A-I> :m .+1<CR>==
+"nnoremap <A-O> :m .-2<CR>==
 
 let g:ft_man_open_mode = 'vert'
 
