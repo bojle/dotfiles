@@ -35,7 +35,6 @@ function write_back() {
 	gh issue edit 1 -F $todo_file
 }
 
-
 cd $todo_list_path
 check_connection
 fetch_file

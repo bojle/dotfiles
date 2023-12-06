@@ -14,6 +14,9 @@ super + d
 super + shift + x
 	$BROWSER --force-device-scale-factor=1.2 %U
 
+#super + shift + x
+#	$BROWSER
+
 # Open Ranger (File Manager)
 super + shift + l
 	alacritty -e ranger
@@ -126,6 +129,12 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + semicolon
+    bspc desktop -f 8
+
+super + colon
+    bspc desktop -f 8
 
 #
 # preselect

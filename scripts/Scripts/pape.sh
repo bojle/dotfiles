@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+set -e
+
 bspwmrc_loc="$HOME/.config/bspwm/bspwmrc"
 pape_loc="$HOME/Pictures/Wallpapers/"
 

@@ -25,6 +25,7 @@ call plug#end()
 
 """ Vim Native Plugins
 packadd! matchit
+runtime macros/matchit.vim
 runtime! ftplugin/man.vim
 
 " change colorscheme
@@ -40,13 +41,13 @@ autocmd FileType python setlocal shiftwidth=4 softtabstop=4
 autocmd FileType *.hs setlocal tabstop=4 shiftwidth=4 expandtab=4
 autocmd FileType text,markdown,tex,rst setlocal spell spelllang=en_gb
 autocmd FileType text,markdown,tex,rst set textwidth=80
-autocmd FileType c,cpp setlocal equalprg=clang-format
+autocmd FileType c,cpp setlocal equalprg=clang-format\ --style=LLVM
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn=73
 
 """ set options
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set relativenumber 
@@ -78,6 +79,7 @@ nnoremap <Esc>E :!chmod +x % && ./%<CR>
 nnoremap <Esc>P :!mdtopdf -d %<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
+nnoremap <leader>r :!ctags -R<CR>
 map <space> <leader>
 
 """ Commands
@@ -104,3 +106,7 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+" For verilator error messages of the form:
+" %Warning-UNUSEDSIGNAL: rtl/ibuf.v:128:36: Bits of signal are not used: 'a'[31:16]
+set efm+=%%Warning-WIDTHEXPAND:\ %f:%l:%c:\ %m
