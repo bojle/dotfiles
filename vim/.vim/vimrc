@@ -66,6 +66,7 @@ set hlsearch
 set splitright
 set splitbelow
 set esckeys
+set complete-=i
 
 set makeprg=make\ -j\ 6
 

@@ -5,7 +5,8 @@ redshift -P -O 4600k &
 
 external_monitor_connected=$(xrandr -q | grep 'HDMI-1-0' | cut -d " " -f 2)
 if [[ $external_monitor_connected == "connected" ]]; then
-    xrandr --output 'eDP-1' --primary --mode 1920x1080 --rotate normal --output 'HDMI-1-0' --mode 1920x1080 --rotate normal --rate 75 --left-of 'eDP-1'
+    xrandr --output 'eDP-1' --primary --mode 1920x1080 --rotate normal \
+      --output 'HDMI-1-0' --mode 1920x1080 --rotate normal --rate 75 --left-of 'eDP-1'
     bspc monitor 'HDMI-1-0' -d 1 2 3 4 5 6 7 
     bspc monitor 'eDP-1' -d 8 9 0 
 else
@@ -48,7 +49,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 #wallpaper
-feh --bg-fill /home/metal/Pictures/Wallpapers/154.jpg
+feh --bg-fill /home/metal/Pictures/Wallpapers/180.jpg
 
 #Compositor  
 xrdb $HOME/.Xdefaults

@@ -20,3 +20,7 @@ pv() {
 		echo "Unrecognized file"
 	fi
 }
+
+cppref() {
+  $BROWSER $HOME/dev/cppreference/en/Main_Page.html
+}

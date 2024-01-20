@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 urlopen() {
-	qutebrowser "$1"
+	brave "$1"
 }
 
 # Used to uniquely identify a url (for cache purposes)

@@ -31,3 +31,5 @@ bindkey -M viins "^E" end-of-line
 bindkey -M viins "^A" beginning-of-line
 bindkey -M viins "^P" up-history
 bindkey -M viins "^N" down-history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
