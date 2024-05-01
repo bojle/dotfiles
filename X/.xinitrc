@@ -34,9 +34,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-systemctl --user enable battery-alert.timer
-systemctl --user start battery-alert.timer
-xsetroot -Adwaita left_ptr
+xsetroot -cursor_name left_ptr
 xset r rate 190 130
 sxhkd &
 exec bspwm
