@@ -20,10 +20,13 @@ wget https://raw.githubusercontent.com/bojle/dotfiles/master/zsh/.zshrc -O $HOME
 wget https://raw.githubusercontent.com/bojle/dotfiles/master/vim/.vim/vimrc -O $HOME/.vimrc
 
 mkdir $HOME/.zsh
+sed '/zsh-z/d' $HOME/.zshrc
 wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O $HOME/.zsh/z.sh
 echo "source $HOME/.zsh/z.sh" >> $HOME/.zshrc
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 
+wget 'https://raw.githubusercontent.com/bojle/dotfiles/master/zsh/.zsh/zsh.alias' -O $HOME/.zsh/zsh.alias
+wget 'https://raw.githubusercontent.com/bojle/dotfiles/master/zsh/.zsh/zsh.functions' -O $HOME/.zsh/zsh.functions
 
