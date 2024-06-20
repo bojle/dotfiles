@@ -19,3 +19,5 @@ alias ls='ls --color=auto'
 alias jupyter-lab="$HOME/dev/jupyter/bin/jupyter-lab"
 
 alias g='git'
+
+alias pamcan='pacman'

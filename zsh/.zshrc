@@ -32,4 +32,6 @@ bindkey -M viins "^A" beginning-of-line
 bindkey -M viins "^P" up-history
 bindkey -M viins "^N" down-history
 
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias ssh="TERM=xterm-256color ssh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

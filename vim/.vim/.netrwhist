@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/metal/.local/share'
+let g:netrw_dirhist_9='/home/metal/dev/bojle.github.io/source/blog'
 let g:netrw_dirhist_8='/home/metal/dev/qmk_firmware/keyboards/boardsource/lulu/rp2040'
 let g:netrw_dirhist_7='/home/metal/dev/qmk_firmware/drivers/backlight'
 let g:netrw_dirhist_6='/home/metal/dev/Gati/src'
