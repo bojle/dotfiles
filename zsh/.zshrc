@@ -1,6 +1,11 @@
 # Created by newuser for 5.8
 
-PROMPT='%B%F{214}%4~%f %(?.%F{15}λ%f.%F{196}λ%f)%b '
+function get_git_branch() {
+  git branch 2>/dev/null | grep '\*' | cut -d ' ' -f 2
+}
+
+setopt PROMPT_SUBST
+PROMPT='%B%F{214}%4~%f %F{14}[%f%F{10}$(get_git_branch)%f%F{14}]%f %(?.%F{15}λ%f.%F{196}λ%f)%b '
 # History Configuration 
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=5000

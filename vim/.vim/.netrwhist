@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/metal/warez/efinity/2023.2/project/tinker'
+let g:netrw_dirhist_2='/home/metal/Downloads/verific_bin_eval/verilog_packages/sdbs/std'
+let g:netrw_dirhist_1='/home/metal/Downloads/verific_bin_eval/verilog_packages/sdbs'
 let g:netrw_dirhist_0='/home/metal/.local/share'
 let g:netrw_dirhist_9='/home/metal/dev/bojle.github.io/source/blog'
 let g:netrw_dirhist_8='/home/metal/dev/qmk_firmware/keyboards/boardsource/lulu/rp2040'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_7='/home/metal/dev/qmk_firmware/drivers/backlight'
 let g:netrw_dirhist_6='/home/metal/dev/Gati/src'
 let g:netrw_dirhist_5='/home/metal/dev/tf_gpu/lib/python3.10/site-packages/tensorflow/python/keras'
 let g:netrw_dirhist_4='/home/metal/dev/Gati/config_bus'
-let g:netrw_dirhist_3='/home/metal/dev/Gati/fifo sharing'
-let g:netrw_dirhist_2='/home/metal/mntp/etc/X11/xorg.conf.d'
-let g:netrw_dirhist_1='/etc/X11/xorg.conf.d'
