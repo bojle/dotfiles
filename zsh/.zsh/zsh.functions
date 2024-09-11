@@ -8,7 +8,7 @@ fnd() {
 	find "$dir" | grep -Ei "$@"
 }
 
-pv() {
+pdv() {
 	mime="$(file --mime-type -b "$1")"
 	if [[ $mime =~ application/.* ]]; then
 		zathura "$1" &

@@ -8,8 +8,8 @@ setopt PROMPT_SUBST
 PROMPT='%B%F{214}%4~%f %F{14}[%f%F{10}$(get_git_branch)%f%F{14}]%f %(?.%F{15}λ%f.%F{196}λ%f)%b '
 # History Configuration 
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
-SAVEHIST=5000
-HISTSIZE=2000
+SAVEHIST=10000
+HISTSIZE=10000
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY

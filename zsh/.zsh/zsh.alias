@@ -1,4 +1,4 @@
-alias cfa='vim ~/.config/alacritty/alacritty.yml'
+alias cfa='vim ~/.config/alacritty/alacritty.toml'
 alias cfz='vim ~/.zshrc'
 alias cfp='vim ~/.config/polybar/config.ini'
 alias cfb='vim ~/.config/bspwm/bspwmrc'
@@ -19,5 +19,8 @@ alias ls='ls --color=auto'
 alias jupyter-lab="$HOME/dev/jupyter/bin/jupyter-lab"
 
 alias g='git'
-
+alias less='less -R'
 alias pamcan='pacman'
+alias hx='hexyl '
+
+alias xclip='xclip -selection clipboard'

@@ -2,8 +2,10 @@ export LANG=C
 export LOCALE=en_US
 export LC_ALL="en_US.UTF-8"
 
-export PATH=$PATH:$HOME/.local/bin/:/home/metal/warez/gcc-arm-11.2-2022.02-x86_64-aarch64-none-linux-gnu/bin/
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/warez/gcc-arm-11.2-2022.02-x86_64-aarch64-none-linux-gnu/bin/
 export PATH=$PATH:$HOME/Scripts/
+export PATH=$PATH:$HOME/warez/efinity/2023.2/bin
 export CSS=$HOME/Scripts/css/nulatex.css
 export BROWSER=chromium
 export EDITOR=/usr/bin/vim
@@ -25,4 +27,8 @@ export PATH=$PATH:$EFINITY_HOME/scripts
 
 export TRT_LIBPATH=/home/metal/dev/TensorRT
 export LLVM_DIR=$HOME/dev/llvm-project/llvm/
-export PATH=$PATH:$PATH/warez/verible-v0.0-3430-g060bde0f/bin
+export PATH=$PATH:$HOME/warez/verible-v0.0-3430-g060bde0f/bin
+export PATH=$PATH:/home/metal/dev/nopcpu/
+
+export PATH=$PATH:/home/metal/dev/fastsyn/
+export PATH=$PATH:/home/metal/dev/fastsyn/suite/yosys/

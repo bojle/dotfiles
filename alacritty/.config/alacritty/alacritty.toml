@@ -32,8 +32,10 @@ unfocused_hollow = true
 size = 14
 
 [font.normal]
+#family = "Fixedsys Excelsior"
 family = "Iosevka Term"
-style = "Regular"
+#family = "JetBrains Mono"
+style = "SemiBold"
 
 [[keyboard.bindings]]
 action = "ScrollPageDown"

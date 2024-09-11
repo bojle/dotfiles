@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Depends on gh (github.com/cli/cli)
+set -euo pipefail
 
 todo_list_path=$HOME/dev/todo-list
 todo_file="todo.md"
