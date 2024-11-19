@@ -24,3 +24,7 @@ pdv() {
 cppref() {
   $BROWSER $HOME/dev/cppreference/en/Main_Page.html
 }
+
+tp() {
+  yosys -p "read_vdb -raw $1" | less -R
+}

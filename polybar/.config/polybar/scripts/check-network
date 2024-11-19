@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 count=0
-disconnected="睊"
-wireless_connected="直"
-ethernet_connected="󰈀"
+disconnected="󰖪 "
+wireless_connected="󰖩 "
+ethernet_connected="󰈀 "
 
 # check where packets are being routed through
 # depending on interface state being UP/DOWN is not reliable
 # as both interface can be up at the same time
-output="$(ip route get 8.8.8.8)"
 while true; do
+    output="$(ip route get 8.8.8.8)"
     if (ping -c 1 google.com) &>/dev/null; then
         if [[ "$output" =~ enp ]]; then
             echo "$ethernet_connected" ; sleep 2

@@ -1,7 +1,7 @@
 # Created by newuser for 5.8
 
 function get_git_branch() {
-  git branch 2>/dev/null | grep '\*' | cut -d ' ' -f 2
+  git branch 2>/dev/null | grep '\*' | sed 's/\* //g'
 }
 
 setopt PROMPT_SUBST
@@ -40,3 +40,5 @@ bindkey -M viins "^N" down-history
 alias ssh="TERM=xterm-256color ssh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f "/home/metal/.ghcup/env" ] && . "/home/metal/.ghcup/env" # ghcup-env
